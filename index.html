@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Jahnvi Anandakrishnan. Class 11 student at Rishi Valley School building at the meeting point of textiles, sustainability, enterprise and sport.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Jahnvi Anandakrishnan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: one length of cloth passing through every textile craft. Woven silk body with a saree border,
+   then pinked cotton, patchwork, dyeing, a tailor's rail of garments, a zip, jersey knit, and a pallu with tassels to finish.
+   Single theme by choice. */
+/* ============================================================
+   COLOUR CODE  -  change the site's colours ONLY here.
+   Replace the # value on a line, save, and the whole site follows.
+   ============================================================ */
+:root{
+  --indigo:#1A1E6E;     /* main cloth colour (page background) */
+  --night:#0F1245;      /* darkest shade: knit panel, deepest dye */
+  --silk:#5A6BFF;       /* glow and sheen on the cloth */
+  --rani:#C2185B;       /* border, pallu and highlight colour */
+  --rani-deep:#8E1143;  /* darker shade of the highlight */
+  --zari:#EDBE4F;       /* gold thread: lines, labels, buttons */
+  --zari-deep:#C98F1B;  /* darker gold */
+  --zari-pale:#F7DC97;  /* lighter gold */
+  --khadi:#F6F0E1;      /* cotton panels and light text */
+  --ink:#151845;        /* text on cotton panels */
+  --soft:#555A86;       /* quieter text on cotton panels */
+  --haze:#C9CEF5;       /* quieter text on the dark cloth */
+  /* the seven indigo dye shades, palest to deepest */
+  --d1:#C9D3EC;--d2:#A3B3DD;--d3:#7B8FCB;--d4:#566BB5;--d5:#3A4C9C;--d6:#27348B;--d7:#161F55;
+  /* ---- end of colour code ---- */
+  --display:"Rozha One","Georgia",serif;
+  --body:"Mukta","Segoe UI",system-ui,sans-serif;
+  --bw:12px;
+  color-scheme:dark;
+}
+@media (min-width:900px){:root{--bw:30px}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;padding:0 calc(var(--bw) + 9px);color:var(--khadi);font-family:var(--body);font-size:17.5px;line-height:1.55;overflow-x:hidden;
+  background:
+    repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 3px),
+    repeating-linear-gradient(90deg,rgba(0,0,0,.16) 0 1px,transparent 1px 3px),
+    var(--indigo)}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--zari);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance}
+p{margin:0 0 14px}
+p:last-child{margin-bottom:0}
+.wrap{max-width:1040px;margin:0 auto;padding:0 12px}
+
+/* ---------- saree border, both edges ---------- */
+.edge{position:fixed;top:0;bottom:0;width:var(--bw);z-index:50;
+  background:repeating-linear-gradient(0deg,transparent 0 26px,color-mix(in srgb,var(--zari) 55%,transparent) 26px 28px),var(--rani)}
+.edge.l{left:0;border-right:2px solid var(--zari)}
+.edge.r{right:0;border-left:2px solid var(--zari)}
+.edge::after{content:"";position:absolute;top:0;bottom:0;width:8px}
+.edge.l::after{left:calc(100% + 2px);background:conic-gradient(from 225deg at 100% 50%,var(--rani) 90deg,transparent 0) 0 0/8px 16px}
+.edge.r::after{right:calc(100% + 2px);background:conic-gradient(from 45deg at 0 50%,var(--rani) 90deg,transparent 0) 0 0/8px 16px}
+
+/* ---------- nav ---------- */
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 20px;padding:14px 12px;max-width:1040px;margin:0 auto}
+.mark{font-family:var(--display);font-size:20px;text-decoration:none;color:var(--zari)}
+nav{display:flex;flex-wrap:wrap;gap:2px 16px}
+nav a{color:var(--haze);text-decoration:none;font-size:15px;font-weight:500}
+nav a:hover{color:var(--zari)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:26px 0 0;isolation:isolate;overflow-x:clip}
+.hero::before{content:"";position:absolute;inset:-80px 0 0;z-index:-1;pointer-events:none;
+  background:linear-gradient(104deg,transparent 28%,color-mix(in srgb,var(--silk) 42%,transparent) 43%,rgba(255,255,255,.14) 50%,color-mix(in srgb,var(--silk) 30%,transparent) 57%,transparent 72%) 0 0/260% 100%;
+  animation:sheen 11s ease-in-out infinite alternate}
+@keyframes sheen{to{background-position:100% 0}}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--zari);margin:0 0 16px}
+h1{font-size:clamp(60px,16vw,168px);line-height:.86;letter-spacing:-.01em;color:var(--khadi);text-shadow:0 0 44px color-mix(in srgb,var(--silk) 55%,transparent)}
+h1 span{display:block;font-size:.47em;color:var(--zari);margin-top:.24em;letter-spacing:0;overflow-wrap:anywhere;text-shadow:0 0 30px color-mix(in srgb,var(--zari) 35%,transparent)}
+.lede{font-size:clamp(18.5px,2.5vw,23px);line-height:1.5;max-width:33em;margin:26px 0 30px}
+.lede b{color:var(--zari);font-weight:700}
+
+/* shade card */
+.shades{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;max-width:560px}
+.shades i{height:54px;display:block;clip-path:polygon(0 0,100% 0,100% 88%,83% 100%,67% 88%,50% 100%,33% 88%,17% 100%,0 88%)}
+.shades i:nth-child(1){background:var(--d1)}.shades i:nth-child(2){background:var(--d2)}.shades i:nth-child(3){background:var(--d3)}
+.shades i:nth-child(4){background:var(--d4)}.shades i:nth-child(5){background:var(--d5)}.shades i:nth-child(6){background:var(--d6);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.shades i:nth-child(7){background:var(--d7);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.shadenote{font-size:13.5px;color:var(--haze);margin:8px 0 34px;max-width:560px;display:flex;justify-content:space-between;gap:12px}
+
+/* selvedge: the woven text strip at a cloth's edge */
+.selvedge{background:var(--rani);border-top:2px solid var(--zari);border-bottom:2px solid var(--zari);overflow:hidden;white-space:nowrap;padding:7px 0;margin:0 -9px}
+.selvedge div{display:inline-block;animation:run 46s linear infinite;font-size:13px;font-weight:700;letter-spacing:.22em;color:var(--zari)}
+.selvedge span{margin:0 16px}
+@keyframes run{to{transform:translateX(-50%)}}
+
+/* ---------- swing tags (numbers) ---------- */
+.tags{display:grid;grid-template-columns:repeat(auto-fit,minmax(138px,1fr));gap:16px;padding:40px 0 14px}
+.tagc{background:radial-gradient(circle at 20px 20px,var(--indigo) 0 5px,transparent 5.5px),var(--khadi);color:var(--ink);padding:38px 16px 16px;
+  clip-path:polygon(18px 0,100% 0,100% 100%,0 100%,0 18px);position:relative}
+.tagc:nth-child(odd){transform:rotate(-1.6deg)}
+.tagc:nth-child(even){transform:rotate(1.4deg)}
+.tagc b{display:block;font-family:var(--display);font-weight:400;font-size:56px;line-height:.9;color:var(--rani)}
+.tagc b small{font-size:.4em;margin-left:3px}
+.tagc span{font-size:14.5px;font-weight:500;line-height:1.25;display:block;margin-top:6px}
+
+/* ---------- chapters ---------- */
+.ch{padding:44px 0}
+.label{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--zari);margin:0 0 12px}
+.label::after{content:"";flex:1;height:5px;border-top:1px solid var(--zari);border-bottom:1px solid var(--zari)}
+h2{font-size:clamp(34px,6.4vw,62px);line-height:1;margin-bottom:24px}
+
+/* cotton swatch with pinked edges and a running stitch */
+.swatch{background:var(--khadi);color:var(--ink);position:relative;padding:34px 26px;margin:10px 0;outline:2px dashed color-mix(in srgb,var(--indigo) 32%,transparent);outline-offset:-11px}
+.swatch::before,.swatch::after{content:"";position:absolute;left:0;right:0;height:9px;background-size:18px 18px}
+.swatch::after{top:100%;background-image:linear-gradient(135deg,var(--khadi) 25%,transparent 25%),linear-gradient(225deg,var(--khadi) 25%,transparent 25%);background-position:-9px 0}
+.swatch::before{bottom:100%;background-image:linear-gradient(45deg,var(--khadi) 25%,transparent 25%),linear-gradient(315deg,var(--khadi) 25%,transparent 25%);background-position:-9px 100%}
+.swatch .label{color:var(--rani)}
+.swatch .label::after{border-color:var(--rani)}
+.swatch h2{color:var(--indigo)}
+.split{display:grid;grid-template-columns:1.3fr 1fr;gap:26px 48px;align-items:start}
+.prose{max-width:60ch}
+.pull{font-family:var(--display);font-size:clamp(23px,3vw,30px);line-height:1.2;color:var(--rani);margin:0}
+
+/* care label */
+.care{border:1.5px solid var(--ink);padding:12px 14px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1.7;margin-top:22px;max-width:250px}
+.care span{display:block}
+
+/* warp and weft */
+.thread-t{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--haze);margin:0 0 8px}
+.thread{display:flex;flex-wrap:wrap;align-items:center;gap:9px 0;margin:0 0 24px;padding:0;list-style:none;font-weight:500;font-size:16.5px}
+.thread li{border:1.5px solid var(--zari);border-radius:999px;padding:4px 15px;position:relative}
+.thread li+li{margin-left:26px}
+.thread li+li::before{content:"";position:absolute;right:100%;top:50%;width:27px;border-top:2px dashed var(--zari)}
+.thread li.end{background:var(--zari);color:var(--night);font-family:var(--display);font-size:19px;padding:3px 18px}
+.thread li.end.p{background:var(--rani);border-color:var(--rani);color:#fff}
+.note{max-width:58ch;color:#E8EAFB}
+
+/* ventures */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.card{background:var(--khadi);color:var(--ink);display:flex;flex-direction:column}
+.card .bd{padding:22px 24px 26px}
+.card h3{font-size:clamp(40px,6.4vw,54px);line-height:.95;color:var(--indigo);margin-bottom:4px}
+.role{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rani);margin:0 0 12px}
+.card ul{margin:0 0 20px;padding-left:20px}
+.card li{margin-bottom:3px}
+/* patchwork from surplus cloth */
+.patch{display:grid;grid-template-columns:repeat(6,1fr);height:92px}
+.patch i{display:block;outline:2px dashed rgba(255,255,255,.75);outline-offset:-5px}
+.patch i:nth-child(1){background:linear-gradient(90deg,color-mix(in srgb,var(--rani) 55%,transparent) 50%,transparent 50%) 0 0/14px 14px,linear-gradient(color-mix(in srgb,var(--rani) 55%,transparent) 50%,transparent 50%) 0 0/14px 14px,#fff}
+.patch i:nth-child(2){background:var(--d5)}
+.patch i:nth-child(3){background:radial-gradient(var(--zari) 3px,transparent 3.6px) 0 0/14px 14px,var(--indigo)}
+.patch i:nth-child(4){background:repeating-linear-gradient(90deg,var(--d2) 0 6px,var(--khadi) 6px 12px)}
+.patch i:nth-child(5){background:var(--rani)}
+.patch i:nth-child(6){background:repeating-linear-gradient(45deg,var(--zari) 0 5px,var(--zari-pale) 5px 10px)}
+/* collar tag */
+.collar{display:inline-flex;align-items:center;gap:0;margin:0}
+.collar::before{content:"";width:16px;height:16px;border:3px solid var(--zari);border-radius:50%;margin-right:-3px}
+.collar span{background:var(--zari);color:var(--night);border-radius:999px;font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:4px 14px}
+.paw{width:34px;height:34px;float:right;margin:4px 0 0 10px;fill:var(--rani)}
+/* goal net */
+.net{height:92px;position:relative;border:6px solid #fff;border-bottom:0;
+  background:linear-gradient(45deg,transparent 45%,rgba(255,255,255,.75) 45% 55%,transparent 55%) 0 0/15px 15px,linear-gradient(-45deg,transparent 45%,rgba(255,255,255,.75) 45% 55%,transparent 55%) 0 0/15px 15px,var(--d6)}
+.net::after{content:"";position:absolute;right:20%;bottom:10px;width:34px;height:34px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,var(--zari-pale),var(--zari) 60%,var(--zari-deep));box-shadow:0 0 18px color-mix(in srgb,var(--zari) 70%,transparent)}
+.card.play .collar::before{display:none}
+.card.play .collar span{background:var(--rani);color:#fff}
+
+/* vat + drying line */
+.vat{display:grid;grid-template-columns:1fr 1fr;gap:28px 48px;align-items:start}
+.line{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;border-top:2px solid var(--zari);margin:14px 0 0;padding:0;list-style:none}
+.line li{height:84px;margin-top:9px;background:var(--khadi);position:relative;transition:background-color .7s;
+  clip-path:polygon(0 0,100% 0,100% 90%,75% 100%,50% 90%,25% 100%,0 90%)}
+.line li::before{content:"";position:absolute;top:0;left:50%;width:7px;height:13px;margin-left:-3.5px;background:var(--zari)}
+.line li.on:nth-child(1){background:var(--d1)}.line li.on:nth-child(2){background:var(--d2)}.line li.on:nth-child(3){background:var(--d3)}
+.line li.on:nth-child(4){background:var(--d4)}.line li.on:nth-child(5){background:var(--d5)}.line li.on:nth-child(6){background:var(--d6)}.line li.on:nth-child(7){background:var(--night)}
+#dipn{font-size:14.5px;color:var(--haze);margin:12px 0 12px}
+.btn{font-family:var(--body);font-size:16px;font-weight:700;letter-spacing:.04em;background:var(--zari);color:var(--night);border:0;border-radius:999px;padding:10px 26px;cursor:pointer;box-shadow:0 0 22px color-mix(in srgb,var(--zari) 45%,transparent)}
+.btn:hover{background:var(--zari-pale)}
+.steps{margin:0 0 18px;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;display:flex;gap:14px;align-items:baseline;padding:7px 0;border-bottom:1px solid color-mix(in srgb,var(--haze) 25%,transparent)}
+.steps li::before{content:counter(s);font-family:var(--display);color:var(--zari);font-size:22px;width:16px}
+
+/* work */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px 48px}
+.cols h3{font-size:27px;color:var(--indigo);margin-bottom:10px}
+.items{margin:0;padding:0;list-style:none}
+.items li{padding:14px 0;border-top:1.5px dashed color-mix(in srgb,var(--indigo) 30%,transparent)}
+.items b{display:block;font-size:18.5px;line-height:1.25}
+.items i{font-style:normal;display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--indigo);color:var(--khadi);padding:1px 9px;margin-bottom:5px}
+.items p{margin:5px 0 0;color:var(--soft)}
+
+/* sport */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:28px 48px}
+.duo h3{font-size:29px;color:var(--zari);margin-bottom:10px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 0;padding:0;list-style:none}
+.badges li{border-radius:999px;padding:5px 16px;font-size:14.5px;font-weight:700;background:var(--khadi);color:var(--ink);outline:1.5px dashed var(--ink);outline-offset:-4px}
+.badges li:first-child{background:var(--rani);color:#fff;outline-color:#fff}
+
+
+/* needle and thread */
+.needle{display:block;width:100%;max-width:440px;height:auto;margin:18px 0 0}
+/* measuring tape */
+.tape{height:30px;margin:26px -4px 0;transform:rotate(-.7deg);box-shadow:0 6px 18px rgba(0,0,0,.35);
+  background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 50px) 0 0/100% 100% no-repeat,
+             repeating-linear-gradient(90deg,var(--ink) 0 1px,transparent 1px 10px) 0 100%/100% 11px no-repeat,var(--zari)}
+/* shirt buttons */
+.btns{display:flex;gap:11px;margin-top:18px}
+.btns i{width:28px;height:28px;border-radius:50%;display:block;box-shadow:inset 0 0 0 3px rgba(255,255,255,.4),0 2px 0 color-mix(in srgb,var(--ink) 35%,transparent);
+  background:radial-gradient(circle at 39% 39%,var(--khadi) 1.7px,transparent 2.1px),radial-gradient(circle at 61% 39%,var(--khadi) 1.7px,transparent 2.1px),
+             radial-gradient(circle at 39% 61%,var(--khadi) 1.7px,transparent 2.1px),radial-gradient(circle at 61% 61%,var(--khadi) 1.7px,transparent 2.1px),var(--rani)}
+.btns i:nth-child(2){background-color:var(--d5)}
+.btns i:nth-child(3){background-color:var(--zari-deep)}
+/* wardrobe rail */
+.rail{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:30px 16px;border-top:5px solid var(--zari);margin:0;padding:0;list-style:none}
+.rail a{display:block;text-decoration:none}
+.rail svg{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 6px;transition:transform .35s;transform-origin:50% 0}
+.rail a:hover svg{transform:rotate(-4deg)}
+.rail b{display:block;font-family:var(--display);font-weight:400;font-size:21px;color:var(--zari);line-height:1.15}
+.rail span{display:block;font-size:15px;line-height:1.35;color:#E8EAFB;margin-top:3px}
+/* zip */
+.zip{height:18px;position:relative;margin:0 0 30px;
+  background:repeating-linear-gradient(90deg,#D9DCEE 0 4px,transparent 4px 10px) 0 0/100% 8px no-repeat,
+             repeating-linear-gradient(90deg,#D9DCEE 0 4px,transparent 4px 10px) 5px 10px/100% 8px no-repeat,var(--night)}
+.zip::after{content:"";position:absolute;left:64%;top:-6px;width:16px;height:30px;background:var(--zari);border-radius:3px 3px 9px 9px;box-shadow:0 0 12px color-mix(in srgb,var(--zari) 60%,transparent)}
+/* jersey knit panel */
+.knit{padding:30px 22px 0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10'%3E%3Cpath d='M0 0L6 8L12 0' fill='none' stroke='%23ffffff' stroke-opacity='.13' stroke-width='2.4'/%3E%3C/svg%3E"),var(--night)}
+.rib{height:26px;margin:30px -22px 0;background:repeating-linear-gradient(90deg,var(--rani) 0 6px,var(--rani-deep) 6px 10px)}
+@media (prefers-reduced-motion:reduce){.rail svg{transition:none}}
+
+/* pallu */
+.pallu{background:var(--rani);margin:44px -9px 0;padding:0 9px;color:#fff}
+.bands{height:44px;background:repeating-linear-gradient(0deg,var(--zari) 0 3px,transparent 3px 9px)}
+.pallu .inner{max-width:1040px;margin:0 auto;padding:46px 12px 44px}
+.pallu blockquote{font-family:var(--display);font-size:clamp(28px,5.2vw,52px);line-height:1.08;margin:0 0 36px;max-width:19em;text-wrap:balance}
+.pallu blockquote b{font-weight:400;color:var(--zari)}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px 48px;border-top:1px solid rgba(255,255,255,.4);padding-top:22px}
+.contact h3{font-family:var(--body);font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--zari);margin-bottom:6px}
+.contact small{display:block;font-size:14.5px;opacity:.85;margin-top:5px}
+.fringe{height:54px;margin:0 -9px;background:
+  radial-gradient(circle at 50% 5px,var(--zari) 0 4.5px,transparent 5px) 0 0/16px 54px,
+  linear-gradient(90deg,transparent 6.5px,var(--zari) 6.5px 9.5px,transparent 9.5px) 0 0/16px 54px}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 24px;font-size:13.5px;color:var(--haze);padding:14px 12px 30px;max-width:1040px;margin:0 auto}
+
+@media (max-width:760px){
+  .split,.vat,.duo{grid-template-columns:1fr}
+  .swatch{padding:30px 20px}
+  .ch{padding:36px 0}
+  .thread li+li{margin-left:16px}
+  .thread li+li::before{width:17px}
+  .thread{font-size:15.5px}
+  .tagc b{font-size:48px}
+  .line li{height:64px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero::before,.selvedge div{animation:none}.line li{transition:none}}
+</style>
+</head>
+<body>
+<div class="edge l" aria-hidden="true"></div>
+<div class="edge r" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="mark" href="#top">Jahnvi</a>
+  <nav aria-label="Sections">
+    <a href="#about">About</a>
+    <a href="#wardrobe">The rail</a>
+    <a href="#ventures">Ventures</a>
+    <a href="#vat">Indigo</a>
+    <a href="#work">Work</a>
+    <a href="#sport">Sport</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <div class="hero">
+    <div class="wrap">
+      <p class="kicker">Class 11 · Rishi Valley School · India</p>
+      <h1>Jahnvi <span>Anandakrishnan</span></h1>
+      <svg class="needle" viewBox="0 0 440 24" aria-hidden="true"><path d="M2 13H318" fill="none" stroke-width="2.5" stroke-dasharray="12 8" stroke-linecap="round" style="stroke:var(--zari)"/><path d="M318 13Q330 4 338 12" fill="none" stroke-width="2" style="stroke:var(--zari)"/><polygon points="330,8 438,12 330,16" fill="#E4E7F7"/><ellipse cx="340" cy="12" rx="5" ry="1.7" style="fill:var(--indigo)"/></svg>
+      <p class="lede">I grew indigo to understand what fashion costs the planet. I keep goal to stay calm in chaos. Now I'm building <b>a dog brand from factory surplus</b> and <b>a handball programme for girls</b>.</p>
+      <div class="shades" role="img" aria-label="Seven cloth swatches in indigo, from pale to deep, one for each dip in a natural dye vat"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="shadenote"><span>One dip</span><span>Natural indigo, from the vat I built</span><span>Seven dips</span></p>
+    </div>
+    <div class="selvedge" aria-hidden="true"><div>
+      <span>JAHNVI ANANDAKRISHNAN</span>✦<span>WOVEN IN COIMBATORE</span>✦<span>RAISED IN RISHI VALLEY</span>✦<span>FOUNDER</span>✦<span>GOALKEEPER</span>✦<span>INDIGO DYER</span>✦<span>JAHNVI ANANDAKRISHNAN</span>✦<span>WOVEN IN COIMBATORE</span>✦<span>RAISED IN RISHI VALLEY</span>✦<span>FOUNDER</span>✦<span>GOALKEEPER</span>✦<span>INDIGO DYER</span>✦
+    </div></div>
+  </div>
+
+  <div class="wrap">
+
+    <div class="tags">
+      <div class="tagc"><b>8<small>yrs</small></b><span>at Rishi Valley School</span></div>
+      <div class="tagc"><b>2</b><span>ventures in the making</span></div>
+      <div class="tagc"><b>2</b><span>internships</span></div>
+      <div class="tagc"><b>5</b><span>sports played</span></div>
+      <div class="tagc"><b>65<small>km</small></b><span>hiked around the valley</span></div>
+    </div>
+    <div class="tape" aria-hidden="true"></div>
+
+    <section class="ch" id="about">
+      <div class="swatch">
+        <p class="label">About · plain cotton</p>
+        <h2>Cut from more than one cloth.</h2>
+        <div class="split">
+          <div class="prose">
+            <p>I have never understood the need to confine myself to one interest. Over the years my curiosity has pulled me in directions I did not plan, and they have started to connect.</p>
+            <p>I joined Rishi Valley School in the fourth grade. The school follows the philosophy of J. Krishnamurti, with less weight on examinations and rankings and more on questioning, observing and learning for yourself. That freedom let me follow interests that would otherwise have stayed unrelated.</p>
+            <p>I study Accountancy, Economics, Business Studies and Environmental Science. Accountancy and Environmental Science are my favourites, which sounds like an odd pair until you try to build a business that is good for the planet.</p>
+          </div>
+          <div>
+            <p class="pull">I want to be an entrepreneur who creates employment and opportunity, and leaves the world around the business better off.</p>
+            <div class="care" aria-label="A care label">
+              <span>Made in Coimbatore</span>
+              <span>Raised in Rishi Valley</span>
+              <span>Handle with questions</span>
+              <span>Do not confine</span>
+            </div>
+            <div class="btns" aria-hidden="true"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ch" id="threads">
+      <p class="label">How it connects · weaving</p>
+      <h2>Warp and weft.</h2>
+      <p class="thread-t">Warp · the threads I was born into</p>
+      <ul class="thread">
+        <li>Textile family</li><li>Fashion</li><li>Natural indigo</li><li>Sustainability</li><li>Business</li><li class="end">Silly Goose</li>
+      </ul>
+      <p class="thread-t">Weft · the threads I added</p>
+      <ul class="thread">
+        <li>Handball</li><li>Goalkeeping</li><li>Captaincy</li><li>Access for others</li><li class="end p">Project Play</li>
+      </ul>
+      <p class="note">My grandfather's textile factories drew me to fashion. Fashion led me to what textiles cost the environment, and that changed how I think about business. Sport taught me leadership, and then made me ask who never gets to play.</p>
+    </section>
+
+
+    <section class="ch" id="wardrobe">
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+        <pattern id="kn" width="8" height="7" patternUnits="userSpaceOnUse"><path d="M0 0L4 5.5L8 0" fill="none" stroke-opacity=".22" stroke-width="1.6" style="stroke:var(--ink)"/></pattern>
+        <pattern id="gg" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#fff"/><rect width="6" height="12" fill-opacity=".5" style="fill:var(--rani)"/><rect width="12" height="6" fill-opacity=".5" style="fill:var(--rani)"/></pattern>
+        <linearGradient id="dip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--d1)"/><stop offset=".5" style="stop-color:var(--d4)"/><stop offset="1" style="stop-color:var(--d7)"/></linearGradient>
+      </defs></svg>
+      <p class="label">The rail · tailoring</p>
+      <h2>Everything I do, on one rail.</h2>
+      <ul class="rail">
+        <li><a href="#threads">
+          <svg viewBox="0 0 120 140" aria-hidden="true"><path d="M60 2V13M60 13L22 31M60 13L98 31" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--zari)"/><path id="tee" d="M40 28L50 24Q60 33 70 24L80 28L107 44L97 63L84 55V130H36V55L23 63L13 44Z" style="fill:var(--khadi)"/><use href="#tee" fill="url(#kn)"/></svg>
+          <b>Plain tee</b><span>Clothes were my first curiosity. I grew up around my grandfather's textile factories.</span></a></li>
+        <li><a href="#work">
+          <svg viewBox="0 0 120 140" aria-hidden="true"><path d="M60 2V13M60 13L22 31M60 13L98 31" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--zari)"/><rect x="30" y="30" width="60" height="100" style="fill:var(--d6)"/><rect x="74" y="30" width="16" height="100" style="fill:var(--rani)"/><path d="M77 30V130M87 30V130" stroke-width="1.6" style="stroke:var(--zari)"/><rect x="30" y="108" width="60" height="22" style="fill:var(--rani)"/><path d="M30 112H90M30 117H90M30 122H90M30 127H90" stroke-width="1.6" style="stroke:var(--zari)"/><path d="M30 62H74" stroke-width="1.5" style="stroke:var(--d7)"/></svg>
+          <b>Folded saree</b><span>Interning with a sustainable saree-making enterprise.</span></a></li>
+        <li><a href="#vat">
+          <svg viewBox="0 0 120 140" aria-hidden="true"><path d="M60 2V13M60 13L22 31M60 13L98 31" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--zari)"/><rect x="33" y="29" width="24" height="88" fill="url(#dip)"/><rect x="63" y="29" width="24" height="72" fill="url(#dip)"/><path d="M35 117v10M40 117v10M45 117v10M50 117v10M55 117v10M65 101v10M70 101v10M75 101v10M80 101v10M85 101v10" stroke-width="1.6" style="stroke:var(--d1)"/></svg>
+          <b>Indigo cloth</b><span>Dyed in a vat I built, with plants I grew.</span></a></li>
+        <li><a href="#ventures">
+          <svg viewBox="0 0 120 140" aria-hidden="true"><path d="M60 2V13M60 13L22 31M60 13L98 31" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--zari)"/><path d="M16 32H104L60 118Z" fill="url(#gg)" stroke-width="2" style="stroke:var(--rani)"/><circle cx="18" cy="32" r="5" style="fill:var(--rani)"/><circle cx="102" cy="32" r="5" style="fill:var(--rani)"/><g transform="translate(46 50) scale(.7)" style="fill:var(--indigo)"><ellipse cx="20" cy="27" rx="10" ry="8"/><circle cx="7" cy="17" r="4.2"/><circle cx="15" cy="9" r="4.4"/><circle cx="25" cy="9" r="4.4"/><circle cx="33" cy="17" r="4.2"/></g></svg>
+          <b>Dog bandana</b><span>Silly Goose, my brand made from factory surplus.</span></a></li>
+        <li><a href="#sport">
+          <svg viewBox="0 0 120 140" aria-hidden="true"><path d="M60 2V13M60 13L22 31M60 13L98 31" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--zari)"/><path id="jer" d="M40 28L50 24Q60 32 70 24L80 28L113 92L100 99L84 67V132H36V67L20 99L7 92Z" style="fill:var(--rani)"/><use href="#jer" fill="url(#kn)"/><rect x="36" y="74" width="48" height="9" style="fill:var(--zari)"/><path d="M50 24Q60 33 70 24" fill="none" stroke-width="3" style="stroke:var(--zari)"/></svg>
+          <b>Keeper's jersey</b><span>Handball goalkeeper, and founder of Project Play.</span></a></li>
+        <li><a href="#work">
+          <svg viewBox="0 0 120 140" aria-hidden="true"><path d="M60 2V13M60 13L22 31M60 13L98 31" fill="none" stroke-width="3" stroke-linecap="round" style="stroke:var(--zari)"/><path d="M47 36Q60 16 73 36" fill="none" stroke-width="3" style="stroke:var(--d2)"/><path d="M46 35H74L80 63L99 71V132H21V71L40 63Z" style="fill:var(--d2)"/><rect x="43" y="92" width="34" height="24" fill="none" stroke-width="1.6" stroke-dasharray="4 3" style="stroke:var(--ink)"/><path d="M21 76H8M99 76H112" stroke-width="3" stroke-linecap="round" style="stroke:var(--d2)"/></svg>
+          <b>Apron</b><span>Café intern at Mojoe House, and Sunday dishwasher at school.</span></a></li>
+      </ul>
+    </section>
+
+    <section class="ch" id="ventures">
+      <p class="label">Ventures · patchwork</p>
+      <h2>What I'm making.</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="patch" role="img" aria-label="A patchwork strip of six different fabric scraps stitched together"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="bd">
+            <svg class="paw" viewBox="0 0 40 40" aria-hidden="true"><ellipse cx="20" cy="27" rx="10" ry="8"/><circle cx="7" cy="17" r="4.2"/><circle cx="15" cy="9" r="4.4"/><circle cx="25" cy="9" r="4.4"/><circle cx="33" cy="17" r="4.2"/></svg>
+            <h3>Silly Goose</h3>
+            <p class="role">Founder · Dog lifestyle brand</p>
+            <p>A whimsical accessories brand for dogs and the people who love them, pieced together from cloth nobody else wanted.</p>
+            <ul>
+              <li>Made from surplus fabric from local textile factories</li>
+              <li>Gives discarded material a second life</li>
+              <li>Brings together design, business and sustainability</li>
+            </ul>
+            <p class="collar"><span>In development</span></p>
+          </div>
+        </article>
+        <article class="card play">
+          <div class="net" role="img" aria-label="A handball resting in a goal net"></div>
+          <div class="bd">
+            <h3>Project Play</h3>
+            <p class="role">Founder · Handball for girls</p>
+            <p>Introducing handball to girls under fourteen in Coimbatore's government schools.</p>
+            <ul>
+              <li>Regular sessions with experienced coaches</li>
+              <li>An annual inter-school tournament</li>
+              <li>Two schools identified; NGO registration is the long-term plan</li>
+            </ul>
+            <p class="collar"><span>In development</span></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="ch" id="vat">
+      <p class="label">Field study · dyeing</p>
+      <h2>Why did one vat give me so many blues?</h2>
+      <div class="vat">
+        <div>
+          <ol class="steps">
+            <li>Grew indigo plants from scratch</li>
+            <li>Built my own natural dye vat</li>
+            <li>Dyed fabric and watched the shade shift</li>
+            <li>Worked out why it kept changing</li>
+          </ol>
+          <p class="note">This was my Environmental Science coursework, and it was far less predictable than I expected. It left me with real respect for the patience and knowledge behind traditional textile practice, and a sharper sense of what the industry costs the environment.</p>
+        </div>
+        <div>
+          <ul class="line" aria-label="Seven swatches drying on a line">
+            <li class="on"></li><li class="on"></li><li class="on"></li><li></li><li></li><li></li><li></li>
+          </ul>
+          <p id="dipn" aria-live="polite">3 of 7 swatches dyed. Each dip goes a shade deeper.</p>
+          <button class="btn" id="dip" type="button">Dip the next swatch</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="ch" id="work">
+      <div class="swatch">
+        <p class="label">Work and community · hand stitching</p>
+        <h2>Learning by showing up.</h2>
+        <div class="cols">
+          <div>
+            <h3>Internships</h3>
+            <ul class="items">
+              <li><i>Café operations</i><b>Mojoe House, Coimbatore</b><p>Studying how the café runs day to day and finding ways to make the business more sustainable.</p></li>
+              <li><i>Textiles and craft</i><b>Sustainable saree-making enterprise</b><p>Seeing how traditional craftsmanship, sustainable materials and enterprise fit together in a working business.</p></li>
+            </ul>
+          </div>
+          <div>
+            <h3>At school</h3>
+            <ul class="items">
+              <li><i>Co-founder</i><b>Clean the Valley Club</b><p>Practical projects to cut waste, pollution and overconsumption on campus.</p></li>
+              <li><i>Volunteer</i><b>Sunday dishwashing</b><p>Washing dishes alongside the papamaakkas who run our dining hall, and trading stories while we work.</p></li>
+              <li><i>Reading mentor</i><b>Buddy Reading</b><p>Helping younger students who find reading and writing difficult.</p></li>
+              <li><i>Member</i><b>Sustainability Committee · Hiking Club</b><p>Campus sustainability work, and long walks through the hills around the valley.</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ch" id="sport">
+      <div class="zip" aria-hidden="true"></div>
+      <div class="knit">
+      <p class="label">Sport and stage · jersey knit</p>
+      <h2>Calm in goal, dramatic on stage.</h2>
+      <div class="duo">
+        <div>
+          <h3>Handball goalkeeper</h3>
+          <p>Playing seriously since the fourth grade. Keeping goal taught me to think fast, trust my team and stay calm when everything around me is chaos.</p>
+          <p>Sports class captain, Sports Committee member and 400 m relay runner.</p>
+          <ul class="badges"><li>Handball</li><li>Badminton</li><li>Pickleball</li><li>Football</li><li>Cricket</li></ul>
+        </div>
+        <div>
+          <h3>Theatre, books, design</h3>
+          <p>Played Helena in the school's annual production of <em>A Midsummer Night's Dream</em>.</p>
+          <p>Constant reader of fiction. Favourite book: <em>The Book Thief</em> by Markus Zusak, which makes me cry every time.</p>
+          <p>Design hero: Jonathan Anderson, for turning the ordinary into the unexpected.</p>
+        </div>
+      </div>
+      <div class="rib" aria-hidden="true"></div>
+      </div>
+    </section>
+
+  </div>
+
+  <section class="pallu" id="contact">
+    <div class="bands" aria-hidden="true"></div>
+    <div class="inner">
+      <blockquote>I hope to <b>build things that reflect what I believe in</b>, stay curious about the world, and never stop finding new things worth learning.</blockquote>
+      <div class="contact">
+        <div>
+          <h3>Contact</h3>
+          <p>For university, partnership or media enquiries, write to <strong>[contact email to be added]</strong>.</p>
+          <small>Enquiries are handled with a parent or mentor in copy.</small>
+        </div>
+        <div>
+          <h3>Coming soon</h3>
+          <p>Dedicated pages for Silly Goose and Project Play.</p>
+        </div>
+      </div>
+    </div>
+    <div class="bands" aria-hidden="true"></div>
+  </section>
+  <div class="fringe" aria-hidden="true"></div>
+
+</main>
+
+<footer>
+  <span>© 2026 Jahnvi Anandakrishnan</span>
+  <span>No cookies, trackers or forms on this site.</span>
+</footer>
+
+<script>
+(function(){
+  var sw=document.querySelectorAll('.line li'),label=document.getElementById('dipn'),btn=document.getElementById('dip'),n=3;
+  function paint(){
+    sw.forEach(function(s,i){s.classList.toggle('on',i<n);});
+    label.textContent=n+' of 7 swatches dyed.'+(n<7?' Each dip goes a shade deeper.':' The line is full.');
+    btn.textContent=n<7?'Dip the next swatch':'Rinse and start again';
+  }
+  btn.addEventListener('click',function(){n=n<7?n+1:1;paint();});
+})();
+</script>
+</body>
+</html>
